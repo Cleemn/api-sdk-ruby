@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **created_at** | **DateTime** |  | [optional] 
 **name** | **String** | Unique name that will be displayed to the users in the expense forms. | [optional] 
 **updated_at** | **DateTime** |  | [optional] 
+**archived_at** | **DateTime** |  | [optional] 
 
 
