@@ -128,8 +128,8 @@ module SwaggerClient
     attr_accessor :force_ending_format
 
     def initialize
-      @scheme = 'https'
-      @host = 'sandbox.mooncard.co'
+      @scheme = 'http'
+      @host = 'localhost:3000'
       @base_path = ''
       @api_key = {}
       @api_key_prefix = {}

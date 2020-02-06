@@ -637,7 +637,7 @@ module SwaggerClient
       when :DateTime
         DateTime.parse(value)
       when :Date
-        Date.parse(value)
+        Date.parse(value) if value.present?
       when :String
         value.to_s
       when :Integer
