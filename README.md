@@ -120,11 +120,23 @@ Class | Method | HTTP request | Description
 *SwaggerClient::ExpenseCategoriesApi* | [**put_api_v3_expense_categories_id**](docs/ExpenseCategoriesApi.md#put_api_v3_expense_categories_id) | **PUT** /api/v3/expense_categories/{id} | 
 *SwaggerClient::ExpensesApi* | [**get_api_v3_expenses**](docs/ExpensesApi.md#get_api_v3_expenses) | **GET** /api/v3/expenses | 
 *SwaggerClient::ExpensesApi* | [**get_api_v3_expenses_id**](docs/ExpensesApi.md#get_api_v3_expenses_id) | **GET** /api/v3/expenses/{id} | 
+*SwaggerClient::MeApi* | [**get_api_v3_me**](docs/MeApi.md#get_api_v3_me) | **GET** /api/v3/me | 
+*SwaggerClient::UserProfilesApi* | [**delete_api_v3_user_profiles_id**](docs/UserProfilesApi.md#delete_api_v3_user_profiles_id) | **DELETE** /api/v3/user_profiles/{id} | 
+*SwaggerClient::UserProfilesApi* | [**get_api_v3_user_profiles**](docs/UserProfilesApi.md#get_api_v3_user_profiles) | **GET** /api/v3/user_profiles | 
+*SwaggerClient::UserProfilesApi* | [**get_api_v3_user_profiles_id**](docs/UserProfilesApi.md#get_api_v3_user_profiles_id) | **GET** /api/v3/user_profiles/{id} | 
+*SwaggerClient::UserProfilesApi* | [**post_api_v3_user_profiles**](docs/UserProfilesApi.md#post_api_v3_user_profiles) | **POST** /api/v3/user_profiles | 
+*SwaggerClient::UserProfilesApi* | [**put_api_v3_user_profiles_id**](docs/UserProfilesApi.md#put_api_v3_user_profiles_id) | **PUT** /api/v3/user_profiles/{id} | 
+*SwaggerClient::WebhooksApi* | [**delete_api_v3_webhooks_id**](docs/WebhooksApi.md#delete_api_v3_webhooks_id) | **DELETE** /api/v3/webhooks/{id} | 
+*SwaggerClient::WebhooksApi* | [**get_api_v3_webhooks**](docs/WebhooksApi.md#get_api_v3_webhooks) | **GET** /api/v3/webhooks | 
+*SwaggerClient::WebhooksApi* | [**get_api_v3_webhooks_id**](docs/WebhooksApi.md#get_api_v3_webhooks_id) | **GET** /api/v3/webhooks/{id} | 
+*SwaggerClient::WebhooksApi* | [**post_api_v3_webhooks**](docs/WebhooksApi.md#post_api_v3_webhooks) | **POST** /api/v3/webhooks | 
+*SwaggerClient::WebhooksApi* | [**put_api_v3_webhooks_id**](docs/WebhooksApi.md#put_api_v3_webhooks_id) | **PUT** /api/v3/webhooks/{id} | 
 
 
 ## Documentation for Models
 
  - [SwaggerClient::Account](docs/Account.md)
+ - [SwaggerClient::Address](docs/Address.md)
  - [SwaggerClient::AnalyticCode](docs/AnalyticCode.md)
  - [SwaggerClient::BusinessCode](docs/BusinessCode.md)
  - [SwaggerClient::Card](docs/Card.md)
@@ -140,6 +152,10 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::PostApiV3BusinessCodes](docs/PostApiV3BusinessCodes.md)
  - [SwaggerClient::PostApiV3ExpenseCategories](docs/PostApiV3ExpenseCategories.md)
  - [SwaggerClient::PostApiV3ExpenseCategoriesExpenseCategory](docs/PostApiV3ExpenseCategoriesExpenseCategory.md)
+ - [SwaggerClient::PostApiV3UserProfiles](docs/PostApiV3UserProfiles.md)
+ - [SwaggerClient::PostApiV3UserProfilesUserProfile](docs/PostApiV3UserProfilesUserProfile.md)
+ - [SwaggerClient::PostApiV3Webhooks](docs/PostApiV3Webhooks.md)
+ - [SwaggerClient::PostApiV3WebhooksWebhook](docs/PostApiV3WebhooksWebhook.md)
  - [SwaggerClient::PutApiV3AnalyticCodes](docs/PutApiV3AnalyticCodes.md)
  - [SwaggerClient::PutApiV3AnalyticCodesAnalyticCode](docs/PutApiV3AnalyticCodesAnalyticCode.md)
  - [SwaggerClient::PutApiV3BusinessCodes](docs/PutApiV3BusinessCodes.md)
@@ -148,6 +164,13 @@ Class | Method | HTTP request | Description
  - [SwaggerClient::PutApiV3CardsCard](docs/PutApiV3CardsCard.md)
  - [SwaggerClient::PutApiV3ExpenseCategories](docs/PutApiV3ExpenseCategories.md)
  - [SwaggerClient::PutApiV3ExpenseCategoriesExpenseCategory](docs/PutApiV3ExpenseCategoriesExpenseCategory.md)
+ - [SwaggerClient::PutApiV3UserProfiles](docs/PutApiV3UserProfiles.md)
+ - [SwaggerClient::PutApiV3UserProfilesUserProfile](docs/PutApiV3UserProfilesUserProfile.md)
+ - [SwaggerClient::PutApiV3Webhooks](docs/PutApiV3Webhooks.md)
+ - [SwaggerClient::PutApiV3WebhooksWebhook](docs/PutApiV3WebhooksWebhook.md)
+ - [SwaggerClient::UserProfile](docs/UserProfile.md)
+ - [SwaggerClient::UserProfilePreferences](docs/UserProfilePreferences.md)
+ - [SwaggerClient::Webhook](docs/Webhook.md)
 
 
 ## Documentation for Authorization

@@ -20,11 +20,14 @@ module SwaggerClient
     # Unique name that will be displayed to the users in the expense forms.
     attr_accessor :name
 
+    attr_accessor :archived_at
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'code' => :'code',
-        :'name' => :'name'
+        :'name' => :'name',
+        :'archived_at' => :'archived_at'
       }
     end
 
@@ -32,7 +35,8 @@ module SwaggerClient
     def self.swagger_types
       {
         :'code' => :'String',
-        :'name' => :'String'
+        :'name' => :'String',
+        :'archived_at' => :'DateTime'
       }
     end
 
@@ -50,6 +54,10 @@ module SwaggerClient
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'archived_at')
+        self.archived_at = attributes[:'archived_at']
       end
     end
 
@@ -72,7 +80,8 @@ module SwaggerClient
       return true if self.equal?(o)
       self.class == o.class &&
           code == o.code &&
-          name == o.name
+          name == o.name &&
+          archived_at == o.archived_at
     end
 
     # @see the `==` method
@@ -84,7 +93,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, name].hash
+      [code, name, archived_at].hash
     end
 
     # Builds the object from hash

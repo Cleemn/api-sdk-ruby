@@ -13,28 +13,24 @@ Swagger Codegen version: 2.4.10
 require 'date'
 
 module SwaggerClient
-  class PostApiV3AnalyticCodesAnalyticCode
-    attr_accessor :archived_at
+  class PostApiV3WebhooksWebhook
+    attr_accessor :url
 
-    attr_accessor :code
-
-    attr_accessor :name
+    attr_accessor :event_keys
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'archived_at' => :'archived_at',
-        :'code' => :'code',
-        :'name' => :'name'
+        :'url' => :'url',
+        :'event_keys' => :'event_keys'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'archived_at' => :'DateTime',
-        :'code' => :'String',
-        :'name' => :'String'
+        :'url' => :'String',
+        :'event_keys' => :'String'
       }
     end
 
@@ -46,16 +42,12 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'archived_at')
-        self.archived_at = attributes[:'archived_at']
+      if attributes.has_key?(:'url')
+        self.url = attributes[:'url']
       end
 
-      if attributes.has_key?(:'code')
-        self.code = attributes[:'code']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'event_keys')
+        self.event_keys = attributes[:'event_keys']
       end
     end
 
@@ -63,12 +55,12 @@ module SwaggerClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @code.nil?
-        invalid_properties.push('invalid value for "code", code cannot be nil.')
+      if @url.nil?
+        invalid_properties.push('invalid value for "url", url cannot be nil.')
       end
 
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @event_keys.nil?
+        invalid_properties.push('invalid value for "event_keys", event_keys cannot be nil.')
       end
 
       invalid_properties
@@ -77,8 +69,8 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @code.nil?
-      return false if @name.nil?
+      return false if @url.nil?
+      return false if @event_keys.nil?
       true
     end
 
@@ -87,9 +79,8 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          archived_at == o.archived_at &&
-          code == o.code &&
-          name == o.name
+          url == o.url &&
+          event_keys == o.event_keys
     end
 
     # @see the `==` method
@@ -101,7 +92,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [archived_at, code, name].hash
+      [url, event_keys].hash
     end
 
     # Builds the object from hash

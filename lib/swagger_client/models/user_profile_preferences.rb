@@ -13,28 +13,28 @@ Swagger Codegen version: 2.4.10
 require 'date'
 
 module SwaggerClient
-  class PostApiV3AnalyticCodesAnalyticCode
-    attr_accessor :archived_at
+  class UserProfilePreferences
+    attr_accessor :auto_check_rebilling
 
-    attr_accessor :code
+    attr_accessor :use_km_expenses
 
-    attr_accessor :name
+    attr_accessor :use_manual_expenses
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'archived_at' => :'archived_at',
-        :'code' => :'code',
-        :'name' => :'name'
+        :'auto_check_rebilling' => :'auto_check_rebilling',
+        :'use_km_expenses' => :'use_km_expenses',
+        :'use_manual_expenses' => :'use_manual_expenses'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'archived_at' => :'DateTime',
-        :'code' => :'String',
-        :'name' => :'String'
+        :'auto_check_rebilling' => :'BOOLEAN',
+        :'use_km_expenses' => :'BOOLEAN',
+        :'use_manual_expenses' => :'BOOLEAN'
       }
     end
 
@@ -46,16 +46,16 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'archived_at')
-        self.archived_at = attributes[:'archived_at']
+      if attributes.has_key?(:'auto_check_rebilling')
+        self.auto_check_rebilling = attributes[:'auto_check_rebilling']
       end
 
-      if attributes.has_key?(:'code')
-        self.code = attributes[:'code']
+      if attributes.has_key?(:'use_km_expenses')
+        self.use_km_expenses = attributes[:'use_km_expenses']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'use_manual_expenses')
+        self.use_manual_expenses = attributes[:'use_manual_expenses']
       end
     end
 
@@ -63,22 +63,12 @@ module SwaggerClient
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @code.nil?
-        invalid_properties.push('invalid value for "code", code cannot be nil.')
-      end
-
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @code.nil?
-      return false if @name.nil?
       true
     end
 
@@ -87,9 +77,9 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          archived_at == o.archived_at &&
-          code == o.code &&
-          name == o.name
+          auto_check_rebilling == o.auto_check_rebilling &&
+          use_km_expenses == o.use_km_expenses &&
+          use_manual_expenses == o.use_manual_expenses
     end
 
     # @see the `==` method
@@ -101,7 +91,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [archived_at, code, name].hash
+      [auto_check_rebilling, use_km_expenses, use_manual_expenses].hash
     end
 
     # Builds the object from hash

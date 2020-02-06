@@ -26,6 +26,8 @@ module SwaggerClient
 
     attr_accessor :updated_at
 
+    attr_accessor :archived_at
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -33,7 +35,8 @@ module SwaggerClient
         :'code' => :'code',
         :'created_at' => :'created_at',
         :'name' => :'name',
-        :'updated_at' => :'updated_at'
+        :'updated_at' => :'updated_at',
+        :'archived_at' => :'archived_at'
       }
     end
 
@@ -44,7 +47,8 @@ module SwaggerClient
         :'code' => :'String',
         :'created_at' => :'DateTime',
         :'name' => :'String',
-        :'updated_at' => :'DateTime'
+        :'updated_at' => :'DateTime',
+        :'archived_at' => :'DateTime'
       }
     end
 
@@ -75,6 +79,10 @@ module SwaggerClient
       if attributes.has_key?(:'updated_at')
         self.updated_at = attributes[:'updated_at']
       end
+
+      if attributes.has_key?(:'archived_at')
+        self.archived_at = attributes[:'archived_at']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -99,7 +107,8 @@ module SwaggerClient
           code == o.code &&
           created_at == o.created_at &&
           name == o.name &&
-          updated_at == o.updated_at
+          updated_at == o.updated_at &&
+          archived_at == o.archived_at
     end
 
     # @see the `==` method
@@ -111,7 +120,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, code, created_at, name, updated_at].hash
+      [id, code, created_at, name, updated_at, archived_at].hash
     end
 
     # Builds the object from hash
