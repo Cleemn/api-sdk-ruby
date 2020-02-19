@@ -500,6 +500,8 @@ module Mooncard
           end
         end
       else # model
+        return if type == 'null'
+
         temp_model = Mooncard.const_get(type).new
         temp_model.build_from_hash(value)
       end

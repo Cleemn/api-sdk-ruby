@@ -137,7 +137,7 @@ module Mooncard
       @client_side_validation = true
       @verify_ssl = true
       @verify_ssl_host = true
-      @params_encoding = nil
+      @params_encoding = :rack
       @cert_file = nil
       @key_file = nil
       @debugging = false

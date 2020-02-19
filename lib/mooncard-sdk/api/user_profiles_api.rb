@@ -19,7 +19,7 @@ module Mooncard
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # @param user_profile 
+    # @param user_profile
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def create(user_profile, opts = {})
@@ -27,7 +27,7 @@ module Mooncard
       nil
     end
 
-    # @param user_profile 
+    # @param user_profile
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def create_with_http_info(user_profile, opts = {})
@@ -68,7 +68,7 @@ module Mooncard
       end
       return data, status_code, headers
     end
-    # @param id 
+    # @param id
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def delete(id, opts = {})
@@ -76,7 +76,7 @@ module Mooncard
       nil
     end
 
-    # @param id 
+    # @param id
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def delete_with_http_info(id, opts = {})
@@ -115,7 +115,7 @@ module Mooncard
       end
       return data, status_code, headers
     end
-    # @param id 
+    # @param id
     # @param [Hash] opts the optional parameters
     # @return [UserProfile]
     def find(id, opts = {})
@@ -123,7 +123,7 @@ module Mooncard
       data
     end
 
-    # @param id 
+    # @param id
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserProfile, Fixnum, Hash)>] UserProfile data, response status code and response headers
     def find_with_http_info(id, opts = {})
@@ -240,9 +240,9 @@ module Mooncard
 
       # form parameters
       form_params = {}
-      form_params['employee_search[id_in]'] = @api_client.build_collection_param(opts[:'employee_search_id_in'], :multi) if !opts[:'employee_search_id_in'].nil?
-      form_params['employee_search[status_in]'] = @api_client.build_collection_param(opts[:'employee_search_status_in'], :multi) if !opts[:'employee_search_status_in'].nil?
-      form_params['employee_search[role_in]'] = @api_client.build_collection_param(opts[:'employee_search_role_in'], :multi) if !opts[:'employee_search_role_in'].nil?
+      query_params['employee_search[id_in]'] = @api_client.build_collection_param(opts[:'employee_search_id_in'], :multi) if !opts[:'employee_search_id_in'].nil?
+      query_params['employee_search[status_in]'] = @api_client.build_collection_param(opts[:'employee_search_status_in'], :multi) if !opts[:'employee_search_status_in'].nil?
+      query_params['employee_search[role_in]'] = @api_client.build_collection_param(opts[:'employee_search_role_in'], :multi) if !opts[:'employee_search_role_in'].nil?
 
       # http body (model)
       post_body = nil
@@ -259,8 +259,8 @@ module Mooncard
       end
       return data, status_code, headers
     end
-    # @param id 
-    # @param user_profile_body 
+    # @param id
+    # @param user_profile_body
     # @param [Hash] opts the optional parameters
     # @return [UserProfile]
     def update(id, user_profile_body, opts = {})
@@ -268,8 +268,8 @@ module Mooncard
       data
     end
 
-    # @param id 
-    # @param user_profile_body 
+    # @param id
+    # @param user_profile_body
     # @param [Hash] opts the optional parameters
     # @return [Array<(UserProfile, Fixnum, Hash)>] UserProfile data, response status code and response headers
     def update_with_http_info(id, user_profile_body, opts = {})
