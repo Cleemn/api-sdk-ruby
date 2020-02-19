@@ -1,4 +1,4 @@
-# SwaggerClient::PostApiV3ExpenseCategoriesExpenseCategory
+# Mooncard::PostApiV3ExpenseCategoriesExpenseCategory
 
 ## Properties
 Name | Type | Description | Notes

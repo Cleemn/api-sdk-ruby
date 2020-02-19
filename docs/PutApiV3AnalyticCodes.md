@@ -1,4 +1,4 @@
-# SwaggerClient::PutApiV3AnalyticCodes
+# Mooncard::PutApiV3AnalyticCodes
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SwaggerClient::PutApiV3BusinessCodesBusinessCode
+# Mooncard::PutApiV3BusinessCodesBusinessCode
 
 ## Properties
 Name | Type | Description | Notes

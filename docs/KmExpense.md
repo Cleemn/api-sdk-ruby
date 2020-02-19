@@ -1,4 +1,4 @@
-# SwaggerClient::KmExpense
+# Mooncard::KmExpense
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,81 +1,38 @@
-# SwaggerClient::AccountsApi
+# Mooncard::AccountsApi
 
-All URIs are relative to *https://sandbox.mooncard.co*
+All URIs are relative to *https://app.mooncard.co*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_api_v3_accounts**](AccountsApi.md#get_api_v3_accounts) | **GET** /api/v3/accounts | 
-[**get_api_v3_accounts_id**](AccountsApi.md#get_api_v3_accounts_id) | **GET** /api/v3/accounts/{id} | 
+[**find**](AccountsApi.md#find) | **GET** /api/v3/accounts/{id} | 
+[**list**](AccountsApi.md#list) | **GET** /api/v3/accounts | 
 
 
-# **get_api_v3_accounts**
-> Array&lt;Account&gt; get_api_v3_accounts
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::AccountsApi.new
-
-begin
-  result = api_instance.get_api_v3_accounts
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling AccountsApi->get_api_v3_accounts: #{e}"
-end
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Array&lt;Account&gt;**](Account.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **get_api_v3_accounts_id**
-> Account get_api_v3_accounts_id(id)
+# **find**
+> Account find(id)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::AccountsApi.new
+api_instance = Mooncard::AccountsApi.new
 
 id = 'id_example' # String | 
 
 
 begin
-  result = api_instance.get_api_v3_accounts_id(id)
+  result = api_instance.find(id)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling AccountsApi->get_api_v3_accounts_id: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling AccountsApi->find: #{e}"
 end
 ```
 
@@ -88,6 +45,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Account**](Account.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list**
+> Array&lt;Account&gt; list
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::AccountsApi.new
+
+begin
+  result = api_instance.list
+  p result
+rescue Mooncard::ApiError => e
+  puts "Exception when calling AccountsApi->list: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Array&lt;Account&gt;**](Account.md)
 
 ### Authorization
 

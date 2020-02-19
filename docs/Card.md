@@ -1,4 +1,4 @@
-# SwaggerClient::Card
+# Mooncard::Card
 
 ## Properties
 Name | Type | Description | Notes

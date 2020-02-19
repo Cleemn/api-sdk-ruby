@@ -1,4 +1,4 @@
-# SwaggerClient::ExpenseCategory
+# Mooncard::ExpenseCategory
 
 ## Properties
 Name | Type | Description | Notes

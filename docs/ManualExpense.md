@@ -1,4 +1,4 @@
-# SwaggerClient::ManualExpense
+# Mooncard::ManualExpense
 
 ## Properties
 Name | Type | Description | Notes

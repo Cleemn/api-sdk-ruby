@@ -1,4 +1,4 @@
-# SwaggerClient::Movement
+# Mooncard::Movement
 
 ## Properties
 Name | Type | Description | Notes

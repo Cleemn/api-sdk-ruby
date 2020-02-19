@@ -1,40 +1,88 @@
-# SwaggerClient::ExpenseCategoriesApi
+# Mooncard::ExpenseCategoriesApi
 
-All URIs are relative to *https://sandbox.mooncard.co*
+All URIs are relative to *https://app.mooncard.co*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_api_v3_expense_categories_id**](ExpenseCategoriesApi.md#delete_api_v3_expense_categories_id) | **DELETE** /api/v3/expense_categories/{id} | 
-[**get_api_v3_expense_categories**](ExpenseCategoriesApi.md#get_api_v3_expense_categories) | **GET** /api/v3/expense_categories | 
-[**get_api_v3_expense_categories_id**](ExpenseCategoriesApi.md#get_api_v3_expense_categories_id) | **GET** /api/v3/expense_categories/{id} | 
-[**post_api_v3_expense_categories**](ExpenseCategoriesApi.md#post_api_v3_expense_categories) | **POST** /api/v3/expense_categories | 
-[**put_api_v3_expense_categories_id**](ExpenseCategoriesApi.md#put_api_v3_expense_categories_id) | **PUT** /api/v3/expense_categories/{id} | 
+[**create**](ExpenseCategoriesApi.md#create) | **POST** /api/v3/expense_categories | 
+[**delete**](ExpenseCategoriesApi.md#delete) | **DELETE** /api/v3/expense_categories/{id} | 
+[**find**](ExpenseCategoriesApi.md#find) | **GET** /api/v3/expense_categories/{id} | 
+[**list**](ExpenseCategoriesApi.md#list) | **GET** /api/v3/expense_categories | 
+[**update**](ExpenseCategoriesApi.md#update) | **PUT** /api/v3/expense_categories/{id} | 
 
 
-# **delete_api_v3_expense_categories_id**
-> delete_api_v3_expense_categories_id(id)
+# **create**
+> create(expense_category)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ExpenseCategoriesApi.new
+api_instance = Mooncard::ExpenseCategoriesApi.new
+
+expense_category = Mooncard::PostApiV3ExpenseCategories.new # PostApiV3ExpenseCategories | 
+
+
+begin
+  api_instance.create(expense_category)
+rescue Mooncard::ApiError => e
+  puts "Exception when calling ExpenseCategoriesApi->create: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expense_category** | [**PostApiV3ExpenseCategories**](PostApiV3ExpenseCategories.md)|  | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **delete**
+> delete(id)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::ExpenseCategoriesApi.new
 
 id = 'id_example' # String | 
 
 
 begin
-  api_instance.delete_api_v3_expense_categories_id(id)
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExpenseCategoriesApi->delete_api_v3_expense_categories_id: #{e}"
+  api_instance.delete(id)
+rescue Mooncard::ApiError => e
+  puts "Exception when calling ExpenseCategoriesApi->delete: #{e}"
 end
 ```
 
@@ -59,22 +107,71 @@ nil (empty response body)
 
 
 
-# **get_api_v3_expense_categories**
-> Array&lt;ExpenseCategory&gt; get_api_v3_expense_categories(opts)
+# **find**
+> ExpenseCategory find(id)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ExpenseCategoriesApi.new
+api_instance = Mooncard::ExpenseCategoriesApi.new
+
+id = 'id_example' # String | 
+
+
+begin
+  result = api_instance.find(id)
+  p result
+rescue Mooncard::ApiError => e
+  puts "Exception when calling ExpenseCategoriesApi->find: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**ExpenseCategory**](ExpenseCategory.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list**
+> Array&lt;ExpenseCategory&gt; list(opts)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::ExpenseCategoriesApi.new
 
 opts = { 
   page: 1, # Integer | Page of results to fetch.
@@ -87,10 +184,10 @@ opts = {
 }
 
 begin
-  result = api_instance.get_api_v3_expense_categories(opts)
+  result = api_instance.list(opts)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExpenseCategoriesApi->get_api_v3_expense_categories: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling ExpenseCategoriesApi->list: #{e}"
 end
 ```
 
@@ -121,130 +218,33 @@ Name | Type | Description  | Notes
 
 
 
-# **get_api_v3_expense_categories_id**
-> ExpenseCategory get_api_v3_expense_categories_id(id)
+# **update**
+> ExpenseCategory update(id, expense_category_body)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ExpenseCategoriesApi.new
+api_instance = Mooncard::ExpenseCategoriesApi.new
 
 id = 'id_example' # String | 
 
+expense_category_body = Mooncard::PutApiV3ExpenseCategories.new # PutApiV3ExpenseCategories | 
+
 
 begin
-  result = api_instance.get_api_v3_expense_categories_id(id)
+  result = api_instance.update(id, expense_category_body)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExpenseCategoriesApi->get_api_v3_expense_categories_id: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**ExpenseCategory**](ExpenseCategory.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **post_api_v3_expense_categories**
-> post_api_v3_expense_categories(expense_category)
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::ExpenseCategoriesApi.new
-
-expense_category = SwaggerClient::PostApiV3ExpenseCategories.new # PostApiV3ExpenseCategories | 
-
-
-begin
-  api_instance.post_api_v3_expense_categories(expense_category)
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExpenseCategoriesApi->post_api_v3_expense_categories: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **expense_category** | [**PostApiV3ExpenseCategories**](PostApiV3ExpenseCategories.md)|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **put_api_v3_expense_categories_id**
-> ExpenseCategory put_api_v3_expense_categories_id(id, expense_category_body)
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::ExpenseCategoriesApi.new
-
-id = 'id_example' # String | 
-
-expense_category_body = SwaggerClient::PutApiV3ExpenseCategories.new # PutApiV3ExpenseCategories | 
-
-
-begin
-  result = api_instance.put_api_v3_expense_categories_id(id, expense_category_body)
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExpenseCategoriesApi->put_api_v3_expense_categories_id: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling ExpenseCategoriesApi->update: #{e}"
 end
 ```
 

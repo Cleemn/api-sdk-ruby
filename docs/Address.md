@@ -1,4 +1,4 @@
-# SwaggerClient::Address
+# Mooncard::Address
 
 ## Properties
 Name | Type | Description | Notes

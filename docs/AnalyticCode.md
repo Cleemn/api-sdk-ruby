@@ -1,4 +1,4 @@
-# SwaggerClient::AnalyticCode
+# Mooncard::AnalyticCode
 
 ## Properties
 Name | Type | Description | Notes

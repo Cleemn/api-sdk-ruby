@@ -1,4 +1,4 @@
-# SwaggerClient::PostApiV3BusinessCodes
+# Mooncard::PostApiV3BusinessCodes
 
 ## Properties
 Name | Type | Description | Notes

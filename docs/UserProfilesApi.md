@@ -1,40 +1,88 @@
-# SwaggerClient::UserProfilesApi
+# Mooncard::UserProfilesApi
 
-All URIs are relative to *https://sandbox.mooncard.co*
+All URIs are relative to *https://app.mooncard.co*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_api_v3_user_profiles_id**](UserProfilesApi.md#delete_api_v3_user_profiles_id) | **DELETE** /api/v3/user_profiles/{id} | 
-[**get_api_v3_user_profiles**](UserProfilesApi.md#get_api_v3_user_profiles) | **GET** /api/v3/user_profiles | 
-[**get_api_v3_user_profiles_id**](UserProfilesApi.md#get_api_v3_user_profiles_id) | **GET** /api/v3/user_profiles/{id} | 
-[**post_api_v3_user_profiles**](UserProfilesApi.md#post_api_v3_user_profiles) | **POST** /api/v3/user_profiles | 
-[**put_api_v3_user_profiles_id**](UserProfilesApi.md#put_api_v3_user_profiles_id) | **PUT** /api/v3/user_profiles/{id} | 
+[**create**](UserProfilesApi.md#create) | **POST** /api/v3/user_profiles | 
+[**delete**](UserProfilesApi.md#delete) | **DELETE** /api/v3/user_profiles/{id} | 
+[**find**](UserProfilesApi.md#find) | **GET** /api/v3/user_profiles/{id} | 
+[**list**](UserProfilesApi.md#list) | **GET** /api/v3/user_profiles | 
+[**update**](UserProfilesApi.md#update) | **PUT** /api/v3/user_profiles/{id} | 
 
 
-# **delete_api_v3_user_profiles_id**
-> delete_api_v3_user_profiles_id(id)
+# **create**
+> create(user_profile)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::UserProfilesApi.new
+api_instance = Mooncard::UserProfilesApi.new
+
+user_profile = Mooncard::PostApiV3UserProfiles.new # PostApiV3UserProfiles | 
+
+
+begin
+  api_instance.create(user_profile)
+rescue Mooncard::ApiError => e
+  puts "Exception when calling UserProfilesApi->create: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_profile** | [**PostApiV3UserProfiles**](PostApiV3UserProfiles.md)|  | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **delete**
+> delete(id)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::UserProfilesApi.new
 
 id = 'id_example' # String | 
 
 
 begin
-  api_instance.delete_api_v3_user_profiles_id(id)
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling UserProfilesApi->delete_api_v3_user_profiles_id: #{e}"
+  api_instance.delete(id)
+rescue Mooncard::ApiError => e
+  puts "Exception when calling UserProfilesApi->delete: #{e}"
 end
 ```
 
@@ -59,22 +107,71 @@ nil (empty response body)
 
 
 
-# **get_api_v3_user_profiles**
-> Array&lt;UserProfile&gt; get_api_v3_user_profiles(opts)
+# **find**
+> UserProfile find(id)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::UserProfilesApi.new
+api_instance = Mooncard::UserProfilesApi.new
+
+id = 'id_example' # String | 
+
+
+begin
+  result = api_instance.find(id)
+  p result
+rescue Mooncard::ApiError => e
+  puts "Exception when calling UserProfilesApi->find: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**UserProfile**](UserProfile.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list**
+> Array&lt;UserProfile&gt; list(opts)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::UserProfilesApi.new
 
 opts = { 
   page: 1, # Integer | Page of results to fetch.
@@ -95,10 +192,10 @@ opts = {
 }
 
 begin
-  result = api_instance.get_api_v3_user_profiles(opts)
+  result = api_instance.list(opts)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling UserProfilesApi->get_api_v3_user_profiles: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling UserProfilesApi->list: #{e}"
 end
 ```
 
@@ -137,130 +234,33 @@ Name | Type | Description  | Notes
 
 
 
-# **get_api_v3_user_profiles_id**
-> UserProfile get_api_v3_user_profiles_id(id)
+# **update**
+> UserProfile update(id, user_profile_body)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::UserProfilesApi.new
+api_instance = Mooncard::UserProfilesApi.new
 
 id = 'id_example' # String | 
 
+user_profile_body = Mooncard::PutApiV3UserProfiles.new # PutApiV3UserProfiles | 
+
 
 begin
-  result = api_instance.get_api_v3_user_profiles_id(id)
+  result = api_instance.update(id, user_profile_body)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling UserProfilesApi->get_api_v3_user_profiles_id: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**UserProfile**](UserProfile.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **post_api_v3_user_profiles**
-> post_api_v3_user_profiles(user_profile)
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::UserProfilesApi.new
-
-user_profile = SwaggerClient::PostApiV3UserProfiles.new # PostApiV3UserProfiles | 
-
-
-begin
-  api_instance.post_api_v3_user_profiles(user_profile)
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling UserProfilesApi->post_api_v3_user_profiles: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_profile** | [**PostApiV3UserProfiles**](PostApiV3UserProfiles.md)|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **put_api_v3_user_profiles_id**
-> UserProfile put_api_v3_user_profiles_id(id, user_profile_body)
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::UserProfilesApi.new
-
-id = 'id_example' # String | 
-
-user_profile_body = SwaggerClient::PutApiV3UserProfiles.new # PutApiV3UserProfiles | 
-
-
-begin
-  result = api_instance.put_api_v3_user_profiles_id(id, user_profile_body)
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling UserProfilesApi->put_api_v3_user_profiles_id: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling UserProfilesApi->update: #{e}"
 end
 ```
 

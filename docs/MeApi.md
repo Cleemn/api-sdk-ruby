@@ -1,33 +1,33 @@
-# SwaggerClient::MeApi
+# Mooncard::MeApi
 
-All URIs are relative to *https://sandbox.mooncard.co*
+All URIs are relative to *https://app.mooncard.co*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_api_v3_me**](MeApi.md#get_api_v3_me) | **GET** /api/v3/me | 
+[**get**](MeApi.md#get) | **GET** /api/v3/me | 
 
 
-# **get_api_v3_me**
-> get_api_v3_me
+# **get**
+> get
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::MeApi.new
+api_instance = Mooncard::MeApi.new
 
 begin
-  api_instance.get_api_v3_me
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling MeApi->get_api_v3_me: #{e}"
+  api_instance.get
+rescue Mooncard::ApiError => e
+  puts "Exception when calling MeApi->get: #{e}"
 end
 ```
 

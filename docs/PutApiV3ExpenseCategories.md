@@ -1,4 +1,4 @@
-# SwaggerClient::PutApiV3ExpenseCategories
+# Mooncard::PutApiV3ExpenseCategories
 
 ## Properties
 Name | Type | Description | Notes

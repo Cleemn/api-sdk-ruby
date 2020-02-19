@@ -1,40 +1,88 @@
-# SwaggerClient::BusinessCodesApi
+# Mooncard::BusinessCodesApi
 
-All URIs are relative to *https://sandbox.mooncard.co*
+All URIs are relative to *https://app.mooncard.co*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_api_v3_business_codes_id**](BusinessCodesApi.md#delete_api_v3_business_codes_id) | **DELETE** /api/v3/business_codes/{id} | 
-[**get_api_v3_business_codes**](BusinessCodesApi.md#get_api_v3_business_codes) | **GET** /api/v3/business_codes | 
-[**get_api_v3_business_codes_id**](BusinessCodesApi.md#get_api_v3_business_codes_id) | **GET** /api/v3/business_codes/{id} | 
-[**post_api_v3_business_codes**](BusinessCodesApi.md#post_api_v3_business_codes) | **POST** /api/v3/business_codes | 
-[**put_api_v3_business_codes_id**](BusinessCodesApi.md#put_api_v3_business_codes_id) | **PUT** /api/v3/business_codes/{id} | 
+[**create**](BusinessCodesApi.md#create) | **POST** /api/v3/business_codes | 
+[**delete**](BusinessCodesApi.md#delete) | **DELETE** /api/v3/business_codes/{id} | 
+[**find**](BusinessCodesApi.md#find) | **GET** /api/v3/business_codes/{id} | 
+[**list**](BusinessCodesApi.md#list) | **GET** /api/v3/business_codes | 
+[**update**](BusinessCodesApi.md#update) | **PUT** /api/v3/business_codes/{id} | 
 
 
-# **delete_api_v3_business_codes_id**
-> delete_api_v3_business_codes_id(id)
+# **create**
+> create(business_code)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::BusinessCodesApi.new
+api_instance = Mooncard::BusinessCodesApi.new
+
+business_code = Mooncard::PostApiV3BusinessCodes.new # PostApiV3BusinessCodes | 
+
+
+begin
+  api_instance.create(business_code)
+rescue Mooncard::ApiError => e
+  puts "Exception when calling BusinessCodesApi->create: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **business_code** | [**PostApiV3BusinessCodes**](PostApiV3BusinessCodes.md)|  | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **delete**
+> delete(id)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::BusinessCodesApi.new
 
 id = 'id_example' # String | 
 
 
 begin
-  api_instance.delete_api_v3_business_codes_id(id)
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BusinessCodesApi->delete_api_v3_business_codes_id: #{e}"
+  api_instance.delete(id)
+rescue Mooncard::ApiError => e
+  puts "Exception when calling BusinessCodesApi->delete: #{e}"
 end
 ```
 
@@ -59,22 +107,71 @@ nil (empty response body)
 
 
 
-# **get_api_v3_business_codes**
-> Array&lt;BusinessCode&gt; get_api_v3_business_codes(opts)
+# **find**
+> BusinessCode find(id)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::BusinessCodesApi.new
+api_instance = Mooncard::BusinessCodesApi.new
+
+id = 'id_example' # String | 
+
+
+begin
+  result = api_instance.find(id)
+  p result
+rescue Mooncard::ApiError => e
+  puts "Exception when calling BusinessCodesApi->find: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**BusinessCode**](BusinessCode.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list**
+> Array&lt;BusinessCode&gt; list(opts)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::BusinessCodesApi.new
 
 opts = { 
   page: 1, # Integer | Page of results to fetch.
@@ -86,10 +183,10 @@ opts = {
 }
 
 begin
-  result = api_instance.get_api_v3_business_codes(opts)
+  result = api_instance.list(opts)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BusinessCodesApi->get_api_v3_business_codes: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling BusinessCodesApi->list: #{e}"
 end
 ```
 
@@ -119,130 +216,33 @@ Name | Type | Description  | Notes
 
 
 
-# **get_api_v3_business_codes_id**
-> BusinessCode get_api_v3_business_codes_id(id)
+# **update**
+> BusinessCode update(id, business_code_body)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::BusinessCodesApi.new
+api_instance = Mooncard::BusinessCodesApi.new
 
 id = 'id_example' # String | 
 
+business_code_body = Mooncard::PutApiV3BusinessCodes.new # PutApiV3BusinessCodes | 
+
 
 begin
-  result = api_instance.get_api_v3_business_codes_id(id)
+  result = api_instance.update(id, business_code_body)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BusinessCodesApi->get_api_v3_business_codes_id: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**BusinessCode**](BusinessCode.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **post_api_v3_business_codes**
-> post_api_v3_business_codes(business_code)
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::BusinessCodesApi.new
-
-business_code = SwaggerClient::PostApiV3BusinessCodes.new # PostApiV3BusinessCodes | 
-
-
-begin
-  api_instance.post_api_v3_business_codes(business_code)
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BusinessCodesApi->post_api_v3_business_codes: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **business_code** | [**PostApiV3BusinessCodes**](PostApiV3BusinessCodes.md)|  | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **put_api_v3_business_codes_id**
-> BusinessCode put_api_v3_business_codes_id(id, business_code_body)
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::BusinessCodesApi.new
-
-id = 'id_example' # String | 
-
-business_code_body = SwaggerClient::PutApiV3BusinessCodes.new # PutApiV3BusinessCodes | 
-
-
-begin
-  result = api_instance.put_api_v3_business_codes_id(id, business_code_body)
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling BusinessCodesApi->put_api_v3_business_codes_id: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling BusinessCodesApi->update: #{e}"
 end
 ```
 

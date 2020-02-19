@@ -1,4 +1,4 @@
-# SwaggerClient::BusinessCode
+# Mooncard::BusinessCode
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,29 +1,77 @@
-# SwaggerClient::AccountMovementsApi
+# Mooncard::AccountMovementsApi
 
-All URIs are relative to *https://sandbox.mooncard.co*
+All URIs are relative to *https://app.mooncard.co*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_api_v3_account_movements**](AccountMovementsApi.md#get_api_v3_account_movements) | **GET** /api/v3/account_movements | 
-[**get_api_v3_account_movements_id**](AccountMovementsApi.md#get_api_v3_account_movements_id) | **GET** /api/v3/account_movements/{id} | 
+[**find**](AccountMovementsApi.md#find) | **GET** /api/v3/account_movements/{id} | 
+[**list**](AccountMovementsApi.md#list) | **GET** /api/v3/account_movements | 
 
 
-# **get_api_v3_account_movements**
-> Array&lt;Movement&gt; get_api_v3_account_movements(account_id, opts)
+# **find**
+> find(id)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::AccountMovementsApi.new
+api_instance = Mooncard::AccountMovementsApi.new
+
+id = 'id_example' # String | 
+
+
+begin
+  api_instance.find(id)
+rescue Mooncard::ApiError => e
+  puts "Exception when calling AccountMovementsApi->find: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list**
+> Array&lt;Movement&gt; list(account_id, opts)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::AccountMovementsApi.new
 
 account_id = 'account_id_example' # String | account_id is required
 
@@ -45,10 +93,10 @@ opts = {
 }
 
 begin
-  result = api_instance.get_api_v3_account_movements(account_id, opts)
+  result = api_instance.list(account_id, opts)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling AccountMovementsApi->get_api_v3_account_movements: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling AccountMovementsApi->list: #{e}"
 end
 ```
 
@@ -75,54 +123,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Array&lt;Movement&gt;**](Movement.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **get_api_v3_account_movements_id**
-> get_api_v3_account_movements_id(id)
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::AccountMovementsApi.new
-
-id = 'id_example' # String | 
-
-
-begin
-  api_instance.get_api_v3_account_movements_id(id)
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling AccountMovementsApi->get_api_v3_account_movements_id: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-nil (empty response body)
 
 ### Authorization
 

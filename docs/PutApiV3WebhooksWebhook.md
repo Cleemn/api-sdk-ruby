@@ -1,4 +1,4 @@
-# SwaggerClient::PutApiV3WebhooksWebhook
+# Mooncard::PutApiV3WebhooksWebhook
 
 ## Properties
 Name | Type | Description | Notes

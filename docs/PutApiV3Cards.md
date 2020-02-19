@@ -1,4 +1,4 @@
-# SwaggerClient::PutApiV3Cards
+# Mooncard::PutApiV3Cards
 
 ## Properties
 Name | Type | Description | Notes

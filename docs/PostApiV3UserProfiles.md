@@ -1,4 +1,4 @@
-# SwaggerClient::PostApiV3UserProfiles
+# Mooncard::PostApiV3UserProfiles
 
 ## Properties
 Name | Type | Description | Notes

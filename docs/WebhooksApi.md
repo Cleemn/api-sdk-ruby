@@ -1,6 +1,6 @@
-# SwaggerClient::WebhooksApi
+# Mooncard::WebhooksApi
 
-All URIs are relative to *https://sandbox.mooncard.co*
+All URIs are relative to *https://app.mooncard.co*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,21 +19,21 @@ Method | HTTP request | Description
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::WebhooksApi.new
+api_instance = Mooncard::WebhooksApi.new
 
 id = 'id_example' # String | 
 
 
 begin
   api_instance.delete_api_v3_webhooks_id(id)
-rescue SwaggerClient::ApiError => e
+rescue Mooncard::ApiError => e
   puts "Exception when calling WebhooksApi->delete_api_v3_webhooks_id: #{e}"
 end
 ```
@@ -67,14 +67,14 @@ nil (empty response body)
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::WebhooksApi.new
+api_instance = Mooncard::WebhooksApi.new
 
 opts = { 
   page: 1, # Integer | Page of results to fetch.
@@ -84,7 +84,7 @@ opts = {
 begin
   result = api_instance.get_api_v3_webhooks(opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Mooncard::ApiError => e
   puts "Exception when calling WebhooksApi->get_api_v3_webhooks: #{e}"
 end
 ```
@@ -119,14 +119,14 @@ Name | Type | Description  | Notes
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::WebhooksApi.new
+api_instance = Mooncard::WebhooksApi.new
 
 id = 'id_example' # String | 
 
@@ -134,7 +134,7 @@ id = 'id_example' # String |
 begin
   result = api_instance.get_api_v3_webhooks_id(id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Mooncard::ApiError => e
   puts "Exception when calling WebhooksApi->get_api_v3_webhooks_id: #{e}"
 end
 ```
@@ -168,21 +168,21 @@ Name | Type | Description  | Notes
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::WebhooksApi.new
+api_instance = Mooncard::WebhooksApi.new
 
-webhook = SwaggerClient::PostApiV3Webhooks.new # PostApiV3Webhooks | 
+webhook = Mooncard::PostApiV3Webhooks.new # PostApiV3Webhooks | 
 
 
 begin
   api_instance.post_api_v3_webhooks(webhook)
-rescue SwaggerClient::ApiError => e
+rescue Mooncard::ApiError => e
   puts "Exception when calling WebhooksApi->post_api_v3_webhooks: #{e}"
 end
 ```
@@ -216,24 +216,24 @@ nil (empty response body)
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::WebhooksApi.new
+api_instance = Mooncard::WebhooksApi.new
 
 id = 'id_example' # String | 
 
-webhook = SwaggerClient::PutApiV3Webhooks.new # PutApiV3Webhooks | 
+webhook = Mooncard::PutApiV3Webhooks.new # PutApiV3Webhooks | 
 
 
 begin
   result = api_instance.put_api_v3_webhooks_id(id, webhook)
   p result
-rescue SwaggerClient::ApiError => e
+rescue Mooncard::ApiError => e
   puts "Exception when calling WebhooksApi->put_api_v3_webhooks_id: #{e}"
 end
 ```

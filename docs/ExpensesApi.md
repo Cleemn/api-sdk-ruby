@@ -1,29 +1,78 @@
-# SwaggerClient::ExpensesApi
+# Mooncard::ExpensesApi
 
-All URIs are relative to *https://sandbox.mooncard.co*
+All URIs are relative to *https://app.mooncard.co*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_api_v3_expenses**](ExpensesApi.md#get_api_v3_expenses) | **GET** /api/v3/expenses | 
-[**get_api_v3_expenses_id**](ExpensesApi.md#get_api_v3_expenses_id) | **GET** /api/v3/expenses/{id} | 
+[**find**](ExpensesApi.md#find) | **GET** /api/v3/expenses/{id} | 
+[**list**](ExpensesApi.md#list) | **GET** /api/v3/expenses | 
 
 
-# **get_api_v3_expenses**
-> Array&lt;Expense&gt; get_api_v3_expenses(opts)
+# **find**
+> Expense find(id)
 
 
 
 ### Example
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'mooncard-sdk'
 # setup authorization
-SwaggerClient.configure do |config|
+Mooncard.configure do |config|
   # Configure OAuth2 access token for authorization: oauth
   config.access_token = 'YOUR ACCESS TOKEN'
 end
 
-api_instance = SwaggerClient::ExpensesApi.new
+api_instance = Mooncard::ExpensesApi.new
+
+id = 'id_example' # String | 
+
+
+begin
+  result = api_instance.find(id)
+  p result
+rescue Mooncard::ApiError => e
+  puts "Exception when calling ExpensesApi->find: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**Expense**](Expense.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **list**
+> Array&lt;Expense&gt; list(opts)
+
+
+
+### Example
+```ruby
+# load the gem
+require 'mooncard-sdk'
+# setup authorization
+Mooncard.configure do |config|
+  # Configure OAuth2 access token for authorization: oauth
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = Mooncard::ExpensesApi.new
 
 opts = { 
   page: 1, # Integer | Page of results to fetch.
@@ -48,10 +97,10 @@ opts = {
 }
 
 begin
-  result = api_instance.get_api_v3_expenses(opts)
+  result = api_instance.list(opts)
   p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExpensesApi->get_api_v3_expenses: #{e}"
+rescue Mooncard::ApiError => e
+  puts "Exception when calling ExpensesApi->list: #{e}"
 end
 ```
 
@@ -82,55 +131,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Array&lt;Expense&gt;**](Expense.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-
-# **get_api_v3_expenses_id**
-> Expense get_api_v3_expenses_id(id)
-
-
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-# setup authorization
-SwaggerClient.configure do |config|
-  # Configure OAuth2 access token for authorization: oauth
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = SwaggerClient::ExpensesApi.new
-
-id = 'id_example' # String | 
-
-
-begin
-  result = api_instance.get_api_v3_expenses_id(id)
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling ExpensesApi->get_api_v3_expenses_id: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**Expense**](Expense.md)
 
 ### Authorization
 
