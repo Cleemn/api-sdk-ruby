@@ -128,8 +128,8 @@ module Mooncard
     attr_accessor :force_ending_format
 
     def initialize
-      @scheme = 'https'
-      @host = 'app.mooncard.co'
+      @scheme = "#{ENV['SDK_CONFIG_SCHEME']}"
+      @host = "#{ENV['SDK_CONFIG_HOST']}"
       @base_path = ''
       @api_key = {}
       @api_key_prefix = {}
