@@ -188,14 +188,13 @@ module Mooncard
 
       # http body (model)
       post_body = @api_client.object_to_http_body(card)
+      binding.pry
+      form_params = { 'card' => JSON.parse(post_body).except('id') }
+      # post_body = nil
+
+
       auth_names = ['oauth']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Card')
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, :header_params => header_params, :query_params => query_params,:form_params => form_params, :body => post_body, :auth_names => auth_names, :return_type => 'Card')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardsApi#update\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
