@@ -188,7 +188,6 @@ module Mooncard
 
       # http body (model)
       post_body = @api_client.object_to_http_body(card)
-      binding.pry
       form_params = { 'card' => JSON.parse(post_body).except('id') }
       # post_body = nil
 

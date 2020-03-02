@@ -123,7 +123,7 @@ module Mooncard
         end
       end
 
-      binding.pry
+      # binding.pry
       request = Typhoeus::Request.new(url, req_opts)
       download_file(request) if opts[:return_type] == 'File'
       request
