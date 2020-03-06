@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **no_receipts** | **BOOLEAN** | This expense category does not require a receipt (e.g. mileage) | [optional] 
 **rebilling** | **BOOLEAN** | Allows rebilling for any expenses associated to the expense category | [optional] 
 **supplier_account** | **String** | Forces the expenses associated with the expense category to be accounting in this supplier account (according to your configuration) | [optional] 
+**archived_at** | **DateTime** |  | [optional] 
 
 
