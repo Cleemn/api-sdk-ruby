@@ -635,9 +635,9 @@ module Mooncard
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        value.blank? ? nil : DateTime.parse(value)
       when :Date
-        Date.parse(value)
+        value.blank? ? nil : Date.parse(value)
       when :String
         value.to_s
       when :Integer
@@ -668,6 +668,8 @@ module Mooncard
         temp_model = Mooncard.const_get(type).new
         temp_model.build_from_hash(value)
       end
+    rescue => e
+      Rails.logger.info("Rescue error: '#{e}' on Card id: '#{id}' in Mooncard::Card#_deserialize")
     end
 
     # Returns the string representation of the object
