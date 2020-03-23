@@ -80,6 +80,8 @@ module Mooncard
 
     attr_accessor :use_manual_expenses
 
+    attr_accessor :company_id
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -131,7 +133,8 @@ module Mooncard
         :'status' => :'status',
         :'auto_check_rebilling' => :'auto_check_rebilling',
         :'use_km_expenses' => :'use_km_expenses',
-        :'use_manual_expenses' => :'use_manual_expenses'
+        :'use_manual_expenses' => :'use_manual_expenses',
+        :'company_id' => :'company_id'
       }
     end
 
@@ -164,7 +167,8 @@ module Mooncard
         :'status' => :'String',
         :'auto_check_rebilling' => :'BOOLEAN',
         :'use_km_expenses' => :'BOOLEAN',
-        :'use_manual_expenses' => :'BOOLEAN'
+        :'use_manual_expenses' => :'BOOLEAN',
+        :'company_id' => :'String'
       }
     end
 
@@ -285,6 +289,10 @@ module Mooncard
       if attributes.has_key?(:'use_manual_expenses')
         self.use_manual_expenses = attributes[:'use_manual_expenses']
       end
+
+      if attributes.has_key?(:'company_id')
+        self.company_id = attributes[:'company_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -380,6 +388,7 @@ module Mooncard
           auto_check_rebilling == o.auto_check_rebilling &&
           use_km_expenses == o.use_km_expenses &&
           use_manual_expenses == o.use_manual_expenses
+          company_id == o.company_id
     end
 
     # @see the `==` method
