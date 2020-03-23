@@ -242,10 +242,10 @@ module Mooncard
 
       # form parameters
       form_params = {}
-      form_params['employee_search[id_in]'] = @api_client.build_collection_param(opts[:'employee_search_id_in'], :multi) if !opts[:'employee_search_id_in'].nil?
-      form_params['employee_search[status_in]'] = @api_client.build_collection_param(opts[:'employee_search_status_in'], :multi) if !opts[:'employee_search_status_in'].nil?
-      form_params['employee_search[role_in]'] = @api_client.build_collection_param(opts[:'employee_search_role_in'], :multi) if !opts[:'employee_search_role_in'].nil?
-      form_params['employee_search[position_in]'] = @api_client.build_collection_param(opts[:'employee_search_position_in'], :multi) if !opts[:'employee_search_position_in'].nil?
+      query_params['employee_search[id_in]'] = @api_client.build_collection_param(opts[:'employee_search_id_in'], :multi) if !opts[:'employee_search_id_in'].nil?
+      query_params['employee_search[status_in]'] = @api_client.build_collection_param(opts[:'employee_search_status_in'], :multi) if !opts[:'employee_search_status_in'].nil?
+      query_params['employee_search[role_in]'] = @api_client.build_collection_param(opts[:'employee_search_role_in'], :multi) if !opts[:'employee_search_role_in'].nil?
+      query_params['employee_search[position_in]'] = @api_client.build_collection_param(opts[:'employee_search_position_in'], :multi) if !opts[:'employee_search_position_in'].nil?
 
       # http body (model)
       post_body = nil
