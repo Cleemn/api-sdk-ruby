@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **position** | **String** |  | [optional] 
 **direct_manager_ids** | **Array&lt;String&gt;** | Array of user_profile_id | [optional] 
+**company_id** | **String** |  | [optional] 
 **active** | **BOOLEAN** | Allow access to the interface | [optional] 
 **analytic_code** | **String** | Use for analytical accounting | [optional] 
 **code** | **String** | Your unique code for the employee | [optional] 

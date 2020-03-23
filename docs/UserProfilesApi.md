@@ -187,6 +187,7 @@ opts = {
   employee_search_code_eq: 'employee_search_code_eq_example', # String | code = ?
   employee_search_expense_type_eq: 'employee_search_expense_type_eq_example', # String | expense_type = ?
   employee_search_role_in: ['employee_search_role_in_example'], # Array<String> | role = IN (?)
+  employee_search_position_in: ['employee_search_position_in_example'], # Array<String> | position = IN (?)
   employee_search_order_by: 'employee_search_order_by_example', # String | Select which field you want to order the results by
   employee_search_order: 'employee_search_order_example' # String | Select whether the results should be sorted in ascending or descending order
 }
@@ -216,6 +217,7 @@ Name | Type | Description  | Notes
  **employee_search_code_eq** | **String**| code &#x3D; ? | [optional] 
  **employee_search_expense_type_eq** | **String**| expense_type &#x3D; ? | [optional] 
  **employee_search_role_in** | [**Array&lt;String&gt;**](String.md)| role &#x3D; IN (?) | [optional] 
+ **employee_search_position_in** | [**Array&lt;String&gt;**](String.md)| position &#x3D; IN (?) | [optional] 
  **employee_search_order_by** | **String**| Select which field you want to order the results by | [optional] 
  **employee_search_order** | **String**| Select whether the results should be sorted in ascending or descending order | [optional] 
 
