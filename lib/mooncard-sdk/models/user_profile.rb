@@ -154,7 +154,7 @@ module Mooncard
         :'updated_at' => :'DateTime',
         :'confirmed_at' => :'DateTime',
         :'archived_at' => :'DateTime',
-        :'direct_manager_ids' => :'Array<null>',
+        :'direct_manager_ids' => :'Array<String>',
         :'company_id' => :'String',
         :'active' => :'BOOLEAN',
         :'analytic_code' => :'String',
@@ -233,9 +233,7 @@ module Mooncard
       end
 
       if attributes.has_key?(:'direct_manager_ids')
-        if (value = attributes[:'direct_manager_ids']).is_a?(Array)
-          self.direct_manager_ids = value
-        end
+        self.direct_manager_ids = attributes[:'direct_manager_ids']
       end
 
       if attributes.has_key?(:'company_id')
